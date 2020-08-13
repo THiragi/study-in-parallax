@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const targetFactor = 0.5; // パララックスの移動量
+  const targetFactor = 0.25; // パララックスの移動量
   const windowHeight = document.documentElement.clientHeight; // 画面の高さ
 
   const parallax = document.getElementsByClassName('parallax');
