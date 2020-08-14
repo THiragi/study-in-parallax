@@ -1,9 +1,10 @@
-function parallaxBackground() {
-  const targetFactor = 0.25; // パララックスの移動量
-  const windowHeight = document.documentElement.clientHeight; // 画面の高さ
+const targetFactor = 0.25; // パララックスの移動量
+const windowHeight = Math.max(screen.height, screen.availHeight, window.outerHeight);
 
-  const parallax = document.getElementsByClassName('parallax');
-  const targets = Array.prototype.slice.call(parallax);
+const parallax = document.getElementsByClassName('parallax');
+const targets = Array.prototype.slice.call(parallax);
+
+function parallaxBackground() {
   const scrollY = Math.max(window.pageYOffset, document.documentElement.scrollTop);
 
   for (const target of targets) {
