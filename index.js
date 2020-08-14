@@ -9,20 +9,15 @@ function parallaxBackground() {
   for (const target of targets) {
     const targetOffsetTop = target.offsetTop;
     const scrollYStart = targetOffsetTop - windowHeight;
-
-    if(scrollY > scrollYStart){
-      target.style.backgroundPositionY = `${(scrollY - targetOffsetTop) * targetFactor}px`;
-    }else{
-      target.style.backgroundPosition ='center top';
-    }
+    target.style.backgroundPositionY = (scrollY > scrollYStart) ? `${(scrollY - targetOffsetTop) * targetFactor}px` : 'top';
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  requestAnimationFrame(parallaxBackground());
+  requestAnimationFrame(parallaxBackground);
 });
 
 window.addEventListener("scroll", () => {
-  requestAnimationFrame(parallaxBackground());
+  requestAnimationFrame(parallaxBackground);
 });
 
